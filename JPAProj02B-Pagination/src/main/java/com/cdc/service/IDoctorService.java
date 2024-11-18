@@ -8,4 +8,6 @@ public interface IDoctorService {
 
 	public Page<Doctor> showDoctotsInfoByPageNumber(int pageNo, int pageSize, boolean ascOrder, String props);
 
+	Iterable<Doctor> showDoctorsBySorting(boolean asc, String... props);
+
 }
