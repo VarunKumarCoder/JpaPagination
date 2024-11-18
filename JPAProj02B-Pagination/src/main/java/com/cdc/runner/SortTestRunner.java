@@ -25,18 +25,20 @@ public class SortTestRunner implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		try {
-			Page<Doctor> page=service.showDoctotsInfoByPageNumber(1, 2, true, "docName");
-			System.out.println("PageNumber:: "+page.getNumber());
-			System.out.println("PageNumber:: "+page.getSize());
-			System.out.println("PageNumber:: "+page.getTotalPages());
-			System.out.println("PageNumber:: "+page.isFirst());
-			System.out.println("PageNumber:: "+page.isLast());
+			Page<Doctor> page = service.showDoctotsInfoByPageNumber(1, 2, true, "docName");
+			System.out.println("PageNumber:: " + page.getNumber());
+			System.out.println("PageNumber:: " + page.getSize());
+			System.out.println("PageNumber:: " + page.getTotalPages());
+			System.out.println("PageNumber:: " + page.isFirst());
+			System.out.println("PageNumber:: " + page.isLast());
 			if (!page.isEmpty()) {
-				List<Doctor> list=page.getContent();
+				List<Doctor> list = page.getContent();
 				list.forEach(System.out::println);
 			} else {
 				System.out.println("No Page found");
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
